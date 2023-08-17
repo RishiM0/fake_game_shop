@@ -1,12 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './Home.jsx'
 import './index.css'
-import {RouterProvider } from "react-router-dom";
-import routes from './routes.jsx';
+import Router from './routes.jsx';
+import { useState, createContext } from 'react';
+
+export const ShopContext = createContext({
+  products: [],
+  cartItems: [],
+  addToCart: () => {},
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={routes} />
+    <Router />
   </React.StrictMode>,
 )

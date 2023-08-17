@@ -1,9 +1,10 @@
-import { createBrowserRouter} from "react-router-dom";
+import { RouterProvider, createBrowserRouter} from "react-router-dom";
 import Home from './Home.jsx';
 import Products from './Products.jsx';
 import ShoppingCart from './ShoppingCart.jsx'
 
-export default router = createBrowserRouter([
+export default Router = () => {
+    const routes = createBrowserRouter([
     {
       path: "/",
       element: <Home />,
@@ -17,3 +18,6 @@ export default router = createBrowserRouter([
         element: <ShoppingCart />
     }
   ]);
+
+  return <RouterProvider router={routes} />
+}
